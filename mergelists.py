@@ -35,41 +35,31 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        res_list = []
         c1 = l1
         c2 = l2
+        res = ListNode(0)
+        res_tail = res
         while True:
-            if c1 is None and c2 is None:
+            if c1 is None or c2 is None:
                 break
-            if c1 is None:
-                res_list.append(ListNode(c2.val))
+            if c2.val <= c1.val:
+                res_tail.next = ListNode(c2.val)
+                res_tail = res_tail.next
                 c2 = c2.next
-            elif c2 is None:
-                res_list.append(ListNode(c1.val))
+            else:
+                res_tail.next = ListNode(c1.val)
+                res_tail = res_tail.next
                 c1 = c1.next
-            elif c2.val < c1.val:
-                res_list.append(ListNode(c2.val))
+        if c1 is None:
+            while c2:
+                res_tail.next = ListNode(c2.val)
+                res_tail = res_tail.next
                 c2 = c2.next
-            elif c1.val < c2.val:
-                res_list.append(ListNode(c1.val))
+        if c2 is None:
+            while c1:
+                res_tail.next = ListNode(c1.val)
+                res_tail = res_tail.next
                 c1 = c1.next
-            elif c1.val == c2.val:
-                res_list.append(ListNode(c1.val))
-                res_list.append(ListNode(c2.val))
-                c1 = c1.next
-                c2 = c2.next
 
-        # print(res_list)
-        if len(res_list) == 0:
-            return None
-        last = res_list.pop()
-        if len(res_list) == 0:
-            return last
-
-        while res_list:
-            curr = res_list.pop()
-            if curr is not None:
-                curr.next = last
-            last = curr
-        return curr
+        return res.next
 
