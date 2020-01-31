@@ -50,16 +50,15 @@ class Solution(object):
                 res_tail.next = ListNode(c1.val)
                 res_tail = res_tail.next
                 c1 = c1.next
-        if c1 is None:
-            while c2:
-                res_tail.next = ListNode(c2.val)
-                res_tail = res_tail.next
-                c2 = c2.next
-        if c2 is None:
-            while c1:
-                res_tail.next = ListNode(c1.val)
-                res_tail = res_tail.next
-                c1 = c1.next
+
+        while c2:
+            res_tail.next = ListNode(c2.val)
+            res_tail = res_tail.next
+            c2 = c2.next
+        while c1:
+            res_tail.next = ListNode(c1.val)
+            res_tail = res_tail.next
+            c1 = c1.next
 
         return res.next
 
