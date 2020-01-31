@@ -27,7 +27,7 @@ class Solution(object):
         tree[4].left = tree[2]
         tree[4].right = tree[6]
 
-        print(self.searchBSTrecursive(tree[4], 2))
+        print(self.searchBST(tree[4], 2))
 
     def searchBST(self, root, val):
         """
@@ -40,19 +40,16 @@ class Solution(object):
 
         if root.val == val:
             return root
-
-        stack = [root]
-        while stack:
-            curr = stack.pop()
+        curr = root
+        while True:
+            if curr is None:
+                return None
             if curr.val == val:
                 return curr
-
-            if curr.left is not None:
-                stack.append(curr.left)
-            if curr.right is not None:
-                stack.append(curr.right)
-
-        return None
+            elif curr.val > val:
+                curr = curr.left
+            elif curr.val < val:
+                curr = curr.right
 
     def iteration(self, root, val):
         if root is None:
@@ -73,9 +70,6 @@ class Solution(object):
         """
         if root is None:
             return []
-
-        if root.val == val:
-            return root
 
         res = self.iteration(root, val)
         if res is None:
