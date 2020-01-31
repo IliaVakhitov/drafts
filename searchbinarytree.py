@@ -8,7 +8,9 @@ class TreeNode(object):
         self.right = None
 
     def __str__(self):
-        return f'{self.val}: [{self.left},{self.right}]'
+        if self is not None:
+            return f'{self.val}: [{self.left},{self.right}]'
+        return 'None'
 
 
 # 30 minutes
@@ -16,25 +18,16 @@ class Solution(object):
 
     def run(self):
         tree = []
-        for i in range(12):
+        for i in range(7):
             tree.append(TreeNode(i))
 
-        tree[8].left = tree[10]
-        tree[8].right = tree[11]
+        tree[2].left = tree[1]
+        tree[2].right = tree[3]
 
-        tree[5].left = tree[8]
-        tree[5].right = tree[9]
+        tree[4].left = tree[2]
+        tree[4].right = tree[6]
 
-        tree[1].left = tree[4]
-        tree[1].right = tree[5]
-
-        tree[2].left = tree[6]
-        tree[2].right = tree[7]
-
-        tree[0].left = tree[1]
-        tree[0].right = tree[2]
-
-        print(self.searchBSTrecursive(tree[0], 5))
+        print(self.searchBSTrecursive(tree[4], 2))
 
     def searchBST(self, root, val):
         """
@@ -66,11 +59,11 @@ class Solution(object):
             return None
         if root.val == val:
             return root
-
-        res = self.iteration(root.left, val)
-        if res is None:
+        if root.left is not None and root.val > val:
+            return self.iteration(root.left, val)
+        elif root.right is not None and root.val < val:
             return self.iteration(root.right, val)
-        return res
+        return None
 
     def searchBSTrecursive(self, root, val):
         """
