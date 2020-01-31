@@ -1,4 +1,4 @@
-from searchbinarytree import Solution
+from mergelists import Solution
 
 
 if __name__ == '__main__':
