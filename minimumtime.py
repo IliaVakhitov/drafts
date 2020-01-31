@@ -1,5 +1,6 @@
 from typing import List
 
+
 # 10 minutes
 class Solution(object):
 

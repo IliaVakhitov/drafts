@@ -1,4 +1,4 @@
-from minimumtime import Solution
+from searchbinarytree import Solution
 
 
 if __name__ == '__main__':
