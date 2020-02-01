@@ -1,4 +1,4 @@
-from mergelists import Solution
+from searchposition import Solution
 
 
 if __name__ == '__main__':
