@@ -1,4 +1,4 @@
-from searchposition import Solution
+from pathsum import Solution
 
 
 if __name__ == '__main__':

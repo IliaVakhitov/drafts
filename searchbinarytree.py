@@ -72,7 +72,5 @@ class Solution(object):
             return []
 
         res = self.iteration(root, val)
-        if res is None:
-            return None
         return res
 
