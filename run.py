@@ -1,4 +1,4 @@
-from plusone import Solution
+from matrixcells import Solution
 
 
 if __name__ == '__main__':
