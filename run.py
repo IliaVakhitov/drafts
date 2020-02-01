@@ -1,4 +1,4 @@
-from pathsum import Solution
+from plusone import Solution
 
 
 if __name__ == '__main__':
