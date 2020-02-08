@@ -28,18 +28,18 @@ class Solution:
             for j in range(columns):
                 if grid[i][j] == '1':
                     islands += 1
-                    stack.append({'r': i, 'c': j})
+                    stack.append([i, j])
                     while stack:
                         curr_item = stack.pop()
-                        r = curr_item['r']
-                        c = curr_item['c']
+                        r = curr_item[0]
+                        c = curr_item[1]
                         grid[r][c] = '0'
                         if r < rows-1 and grid[r+1][c] == '1':
-                            stack.append({'r': r+1, 'c': c})
+                            stack.append([r+1, c])
                         if c < columns-1 and grid[r][c+1] == '1':
-                            stack.append({'r': r, 'c': c+1})
+                            stack.append([r, c+1])
                         if r > 0 and grid[r-1][c] == '1':
-                            stack.append({'r': r-1, 'c': c})
+                            stack.append([r-1, c])
                         if c > 0 and grid[r][c-1] == '1':
-                            stack.append({'r': r, 'c': c-1})
+                            stack.append([r, c-1])
         return islands
