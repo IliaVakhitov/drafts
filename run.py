@@ -1,4 +1,4 @@
-from matrixcells import Solution
+from islandsnumber import Solution
 
 
 if __name__ == '__main__':
