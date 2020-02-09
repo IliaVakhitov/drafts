@@ -30,9 +30,7 @@ class Solution:
                     islands += 1
                     stack.append([i, j])
                     while stack:
-                        curr_item = stack.pop()
-                        r = curr_item[0]
-                        c = curr_item[1]
+                        r, c = stack.pop()
                         grid[r][c] = '0'
                         if r < rows-1 and grid[r+1][c] == '1':
                             stack.append([r+1, c])
