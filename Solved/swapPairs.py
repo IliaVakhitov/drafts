@@ -15,8 +15,7 @@ class ListNode:
 
 class Solution:
 
-    @staticmethod
-    def run():
+    def run(self):
         # Input: 1->2->3->4
         # Output: 2->1->4->3
         node_l11 = ListNode(1)
@@ -30,11 +29,11 @@ class Solution:
         node_l13.next = node_l14
         node_l14.next = node_l15
         
-        print(str(Solution.swapPairs(node_l11)) + ' expected 2')
+        print(str(self.swapPairs(node_l11)) + ' expected 2')
         #print(str(Solution.swapPairs(node_l11)) + ' expected 2')
     
-    @staticmethod
-    def swapPairs(head: ListNode) -> ListNode:
+    
+    def swapPairs(self, head: ListNode) -> ListNode:
         
         if not head:
             return head
@@ -69,6 +68,6 @@ class Solution:
 
 
 if __name__ == '__main__':
-    Solution.run()
+    Solution().run()
 
 
