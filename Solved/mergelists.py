@@ -34,8 +34,7 @@ class Solution(object):
         node_l21.next = node_l23
 
         print(str(self.mergeTwoLists(node_l11, node_l21)))
-        print(str(self.mergeTwoLists(node_l25, node_l14)))
-    #TODO
+        #print(str(self.mergeTwoLists(node_l25, node_l14)))
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         c1 = l1
         c2 = l2
