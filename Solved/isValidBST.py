@@ -13,7 +13,6 @@ class TreeNode(object):
         return 'None'
 
 
-# 30 minutes
 class Solution(object):
 
     def run(self):
