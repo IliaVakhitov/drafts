@@ -13,9 +13,8 @@ class Solution:
         #self.rotateCycle(nums,2)
 
     def rotateCopy(self, nums: List[int], k: int) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
+        # Brute solution
+        # replace elements in a copy
         ln = len(nums)
         if ln == 1:
             return
@@ -33,6 +32,7 @@ class Solution:
         return nums
 
     def rotatePop(self, nums: List[int], k: int) -> None:
+        # pop and append element k times
         ln = len(nums)
         if ln == 1:
             return
@@ -54,6 +54,9 @@ class Solution:
         return nums
 
     def rotateCycle(self, nums: List[int], k: int) -> None:
+        # Replace elements in cycles
+        # Define new position for curr element
+        # as i + k (i+k-len, if i+ k more than len)
         ln = len(nums)
         if ln == 1:
             return
