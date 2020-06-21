@@ -17,8 +17,6 @@ class ListNode(object):
 
 class Solution(object):
     def run(self):
-        # Input: 1->2->3->4->5
-        # Output: 5->4->3->2->1
         node_5 = ListNode(1)
         node_4 = ListNode(2)
         node_3 = ListNode(3)
