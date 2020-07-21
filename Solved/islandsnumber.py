@@ -41,3 +41,6 @@ class Solution:
                         if c > 0 and grid[r][c-1] == '1':
                             stack.append([r, c-1])
         return islands
+
+if __name__ == '__main__':
+    Solution().run()

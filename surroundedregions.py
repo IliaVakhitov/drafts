@@ -77,3 +77,6 @@ class Solution(object):
 if __name__ == '__main__':
     Solution().run()
 
+
+if __name__ == '__main__':
+    Solution().run()
