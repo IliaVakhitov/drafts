@@ -15,7 +15,6 @@ class Solution(object):
         """
         Do not return anything, modify board in-place instead.
         """
-
         for i in range(len(board)):
             for j in range(len(board[i])):
                 if board[i][j] == 1:
@@ -34,3 +33,6 @@ class Solution(object):
                         if c > 0 and grid[r][c - 1] == 1:
                             stack.append({'r': r, 'c': c - 1})
 
+
+if __name__ == '__main__':
+    Solution().run()
